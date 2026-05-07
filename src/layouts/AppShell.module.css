@@ -1,0 +1,25 @@
+/* ==========================================================================
+   AppShell Layout Styles
+   Responsive layout shell that wraps page content with appropriate padding
+   to account for fixed navigation bars (TopNav on desktop, BottomNav on mobile).
+   ========================================================================== */
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile: add bottom padding for fixed BottomNav */
+.content {
+  flex: 1;
+  padding-bottom: var(--bottom-nav-height);
+}
+
+/* Desktop: add top padding for fixed TopNav, remove bottom padding */
+@media (min-width: 769px) {
+  .content {
+    padding-top: var(--nav-height);
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,374 @@
+/* ==========================================================================
+   Profile Page Styles
+   User profile with avatar, editable name, saved addresses, and logout.
+   Mobile-first with responsive layout on larger viewports.
+   ========================================================================== */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 300ms ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---- Header ---- */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.pageTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+/* ---- Profile Card ---- */
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Avatar ---- */
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.avatarIcon {
+  font-size: var(--font-size-3xl);
+}
+
+/* ---- User Info ---- */
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.userName {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.editButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+}
+
+.editButton:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+
+.editButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.emailRow svg {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.userEmail {
+  margin: 0;
+}
+
+/* ---- Edit Name Form ---- */
+
+.editNameForm {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 360px;
+}
+
+.editNameInput {
+  flex: 1;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-500);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-fast);
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
+}
+
+.saveButton:hover {
+  background-color: var(--color-primary-600);
+  transform: scale(1.05);
+}
+
+.saveButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.saveButton:active {
+  transform: scale(0.95);
+}
+
+.cancelButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-fast);
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
+}
+
+.cancelButton:hover {
+  background-color: var(--color-neutral-200);
+}
+
+.cancelButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ---- Section ---- */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ---- Address Card ---- */
+
+.addressList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.addressCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.addressIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-600);
+  flex-shrink: 0;
+  font-size: var(--font-size-sm);
+}
+
+.addressInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.addressLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-700);
+  margin: 0;
+}
+
+.addressStreet {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.addressCityZip {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ---- Logout ---- */
+
+.logoutSection {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  color: var(--color-error);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.logoutButton:hover {
+  background-color: var(--color-error);
+  color: var(--color-text-inverse);
+}
+
+.logoutButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.logoutButton:active {
+  opacity: 0.9;
+}
+
+/* ---- Responsive: Desktop ---- */
+
+@media (min-width: 769px) {
+  .page {
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    font-size: var(--font-size-4xl);
+  }
+
+  .avatarIcon {
+    font-size: var(--font-size-4xl);
+  }
+
+  .userName {
+    font-size: var(--font-size-2xl);
+  }
+
+  .logoutButton {
+    max-width: 300px;
+  }
+
+  .addressList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .profileCard {
+    flex-direction: row;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .userInfo {
+    align-items: flex-start;
+  }
+}

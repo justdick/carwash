@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Onboarding Page Styles
+   Swipeable slides with navigation dots, Get Started / Skip buttons.
+   ========================================================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: linear-gradient(
+    160deg,
+    var(--color-primary-50) 0%,
+    var(--color-teal-50) 50%,
+    var(--color-neutral-0) 100%
+  );
+  overflow: hidden;
+}
+
+/* ---- Skip Button ---- */
+
+.skipButton {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 10;
+}
+
+/* ---- Slides Area ---- */
+
+.slidesWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.slidesTrack {
+  display: flex;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  gap: var(--space-6);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-100) 0%,
+    var(--color-teal-100) 100%
+  );
+  color: var(--color-primary-600);
+  font-size: 3rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-spring);
+}
+
+.slideTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  max-width: 320px;
+}
+
+.slideDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 300px;
+}
+
+/* ---- Bottom Section ---- */
+
+.bottomSection {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* ---- Dots Indicator ---- */
+
+.dots {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-neutral-300);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    width var(--transition-base);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.dotActive {
+  background-color: var(--color-primary-500);
+  width: 28px;
+}
+
+/* ---- Action Buttons ---- */
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* ---- Responsive ---- */
+
+@media (min-width: 769px) {
+  .container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slidesWrapper {
+    max-width: 480px;
+  }
+
+  .iconWrapper {
+    width: 140px;
+    height: 140px;
+    font-size: 3.5rem;
+  }
+
+  .slideTitle {
+    font-size: var(--font-size-3xl);
+  }
+
+  .slideDescription {
+    font-size: var(--font-size-lg);
+    max-width: 380px;
+  }
+
+  .bottomSection {
+    padding: var(--space-8);
+  }
+}
